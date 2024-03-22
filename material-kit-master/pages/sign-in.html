@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,7 +52,49 @@
           </li>
         
   </div>
-  
+      <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC4fhraKKIAEKBuKmx6IJMpA2Qi_MatF-Q",
+        authDomain: "kitmaster-3222a.firebaseapp.com",
+        projectId: "kitmaster-3222a",
+        storageBucket: "kitmaster-3222a.appspot.com",
+        messagingSenderId: "685980871721",
+        appId: "1:685980871721:web:7d7d327034b34f58e08038"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      // Obtener la referencia de la autenticación
+      const auth = getAuth();
+
+      // Obtener los elementos del DOM
+      const emailInput = document.querySelector('input[type="email"]');
+      const passwordInput = document.querySelector('input[type="password"]');
+      const signInButton = document.querySelector('button');
+
+      // Agregar el evento de clic al botón "Sign in"
+      signInButton.addEventListener('click', () => {
+        const email = emailInput.value;
+        const password = passwordInput.value;
+
+        // Iniciar sesión con Firebase
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Acceso exitoso, puedes redirigir al usuario a otra página o hacer cualquier otra acción necesaria
+            console.log("Inicio de sesión exitoso:", userCredential.user);
+          })
+          .catch((error) => {
+            // Hubo un error en el inicio de sesión, puedes mostrar un mensaje de error al usuario
+            console.error("Error al iniciar sesión:", error);
+          });
+      });
+    </script>
   </div>
   
           <li class="nav-item dropdown dropdown-hover mx-2">

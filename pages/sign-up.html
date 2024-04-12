@@ -150,7 +150,7 @@
                   <h4
                     class="text-white font-weight-bolder text-center mt-2 mb-0"
                   >
-                    Sign in
+                    Sign up
                   </h4>
                   <div class="row mt-3"></div>
                 </div>
@@ -180,15 +180,15 @@
                   </div>
                   <div class="text-center">
                     <button
-                      id="signin-button"
+                      id="signup-button"
                       type="button"
                       class="btn bg-gradient-primary w-100 my-4 mb-2"
                     >
-                      Sign in
+                      Sign up
                     </button>
                   </div>
-                  <a href="sign-up.html" class="mt-4 text-sm text-center"
-                    >Don't have an account?</a
+                  <a href="sign-in.html" class="mt-4 text-sm text-center"
+                    >Already have an account?</a
                   >
                 </form>
               </div>
@@ -261,7 +261,7 @@
       // Obtener los elementos del DOM
       const emailInput = document.querySelector('input[type="email"]');
       const passwordInput = document.querySelector('input[type="password"]');
-      const signInButton = document.querySelector("#signin-button");
+      const signInButton = document.querySelector("#signup-button");
 
       // Agregar el evento de clic al botón "Sign in"
       signInButton.addEventListener("click", () => {
@@ -269,23 +269,22 @@
         const password = passwordInput.value;
 
         // Iniciar sesión con Firebase
-        signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            // Acceso exitoso, puedes redirigir al usuario a otra página o hacer cualquier otra acción necesaria
-            console.log("Inicio de sesión exitoso:", userCredential.user);
-          })
-          .catch((error) => {
-            // Hubo un error en el inicio de sesión, puedes mostrar un mensaje de error al usuario
-            console.error("Error al iniciar sesión:", error);
-          });
-        // createUserWithEmailAndPassword(auth, email, password)
-        //   .then((userCredencial) => {
-        //     console.log(userCredencial);
-        //     alert("User created");
+        // signInWithEmailAndPassword(auth, email, password)
+        //   .then((userCredential) => {
+        //     // Acceso exitoso, puedes redirigir al usuario a otra página o hacer cualquier otra acción necesaria
+        //     console.log("Inicio de sesión exitoso:", userCredential.user);
         //   })
         //   .catch((error) => {
-        //     console.log(error.message);
+        //     // Hubo un error en el inicio de sesión, puedes mostrar un mensaje de error al usuario
+        //     console.error("Error al iniciar sesión:", error);
         //   });
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredencial) => {
+            alert("User created");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
       });
     </script>
   </body>

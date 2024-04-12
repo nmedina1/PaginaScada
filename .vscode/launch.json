@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Open sign-in.html",
+      "file": "c:\\Docs\\Wind_turbine\\PaginaScada\\index.html"
+    }
+  ]
+}

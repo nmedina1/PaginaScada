@@ -181,13 +181,39 @@
               
             </div>
           </div><br><br><br>
-          <div class="col-lg-4 col-md-6 col-12 mt-n5">
+          <!-- modelado3d -->
+        <!-- gemelo virtual -->
+        <!-- <script>
+          let scene = new THREE.Scene();
+          scene.background = new THREE.Color(0xe4e4e4);
+          const grados = 80;
+          const aspecto = window.innerWidth / windowHeight;
+          let camera = new THREE.PerspectiveCamera(grados, aspecto);
+          let render = new THREE.WebGL1Renderer();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          document.body.appendChild(renderer.domElement);
+
+          const ancho = 1;
+          const alto = 1;
+          const profundidad = 1;
+          let geometry = new THREE.BoxGeometry(ancho, alto, profundidad);
+          let material = new THREE.MeshBasicMaterial({
+            color: 0x000000,
+            wireframe: true,
+          });
+          let cube = new THREE.Mesh(geometry, material);
+          scene.add(cube);
+          const zoom = 3;
+          camera.position.z = zoom;
+        </script> -->
+        <script type="module" src="../assets/js/3dmodel.js"></script>
+          <!-- <div class="col-lg-4 col-md-6 col-12 mt-n5">
             <a href="javascript:;">
               <div class="p-0 pe-md-0">
                 <img class="w-400 border-radius-md shadow-lg" src="../assets/img/Modelo3D.jpg" alt="image" width="1170" height="850" align="center">
               </div>
             </a>
-          </div>
+          </div> -->
         </div>
         
       </div>

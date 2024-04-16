@@ -42,7 +42,7 @@ function animate() {
 }
 
 let loader = new STLLoader();
-loader.load("../3dmodel/Greenhouse-2.stl", (model) => {
+loader.load("../3dmodel/Windturbine.stl", (model) => {
   object = new THREE.Mesh(
     model,
     new THREE.MeshPhongMaterial({
